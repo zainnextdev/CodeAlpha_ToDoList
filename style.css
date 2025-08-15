@@ -1,0 +1,163 @@
+:root {
+    --primary-purple: hsl(259, 100%, 65%);
+    --accent-blue: hsl(210, 100%, 65%);
+    --accent-red: hsl(0, 100%, 67%);
+    --neutral-white: hsl(0, 0%, 100%);
+    --neutral-off-white: hsl(0, 0%, 94%);
+    --neutral-smokey-grey: hsl(0, 1%, 44%);
+    --neutral-off-black: hsl(0, 0%, 8%);
+    --container-bg: hsl(0, 0%, 12%);
+    --item-bg: hsl(0, 0%, 15%);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--neutral-off-black);
+    color: var(--neutral-off-white);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 5vh;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 500px;
+    background-color: var(--container-bg);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+    overflow: hidden;
+}
+
+.app-header {
+    padding: 1.5rem;
+    background-color: rgba(0,0,0,0.1);
+}
+
+.app-header h1 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--primary-purple);
+}
+
+#new-task-form {
+    display: flex;
+    gap: 0.5rem;
+}
+
+#new-task-input {
+    flex-grow: 1;
+    background-color: var(--item-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    color: var(--neutral-off-white);
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#new-task-input:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 0 3px hsla(259, 100%, 65%, 0.3);
+}
+
+#new-task-form button {
+    background-color: var(--primary-purple);
+    border: none;
+    border-radius: 8px;
+    color: var(--neutral-white);
+    cursor: pointer;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+#new-task-form button:hover {
+    background-color: hsl(259, 100%, 75%);
+}
+
+.task-list-container {
+    padding: 0.5rem 1.5rem 1.5rem;
+}
+
+#task-list {
+    list-style: none;
+    max-height: 60vh;
+    overflow-y: auto;
+}
+
+.task-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--item-bg);
+    border-radius: 8px;
+    margin-top: 0.75rem;
+    transition: all 0.3s ease;
+    animation: fadeIn 0.5s ease-out forwards;
+}
+
+.task-item.removing {
+    animation: fadeOut 0.3s ease-out forwards;
+}
+
+.task-item p {
+    flex-grow: 1;
+    transition: all 0.3s ease;
+}
+
+.task-item.completed p {
+    text-decoration: line-through;
+    color: var(--neutral-smokey-grey);
+    opacity: 0.7;
+}
+
+.task-item .actions button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.25rem;
+    color: var(--neutral-smokey-grey);
+    transition: color 0.3s ease;
+}
+
+.task-item .actions .complete-btn:hover { color: var(--accent-blue); }
+.task-item .actions .delete-btn:hover { color: var(--accent-red); }
+
+.task-item .actions .complete-btn svg {
+    stroke: var(--neutral-smokey-grey);
+    transition: stroke 0.3s ease;
+}
+
+.task-item.completed .actions .complete-btn svg {
+    stroke: var(--accent-blue);
+}
+
+.credits {
+    position: absolute;
+    bottom: 20px;
+    font-size: 0.8rem;
+    color: var(--neutral-smokey-grey);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; transform: scale(1); }
+    to { opacity: 0; transform: scale(0.95); }
+}

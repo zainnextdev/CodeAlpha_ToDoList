@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow | Minimalist To-Do App</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>TaskFlow</h1>
+            <form id="new-task-form">
+                <input type="text" id="new-task-input" placeholder="What's on your mind?" autocomplete="off">
+                <button type="submit" aria-label="Add new task">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
+                </button>
+            </form>
+        </header>
+        <main class="task-list-container">
+            <ul id="task-list">
+            </ul>
+        </main>
+    </div>
+    
+    <footer class="credits">
+        Crafted by Zain Khalid for CodeAlpha
+    </footer>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
