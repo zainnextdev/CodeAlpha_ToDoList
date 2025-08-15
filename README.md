@@ -2,7 +2,7 @@
 
 A minimalist to-do list web app designed for clarity and efficiency. This project features full CRUD functionality and persists data in the browser's local storage. Built as a core task for the CodeAlpha web development internship.
 
-### ✨ [Live Demo](https://YOUR_GITHUB_USERNAME.github.io/CodeAlpha_ToDoList/)
+### ✨ [Live Demo](https://zainnextdev.github.io/CodeAlpha_ToDoList/)
 
 ---
 
